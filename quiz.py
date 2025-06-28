@@ -311,4 +311,4 @@ st.markdown("""
 
  # Title and subtitle
     st.markdown('<h1 class="main-title">Ernie, Bernie, ich muss lernie</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">sonst werd ich sterbie</p>', unsafe_allow_html=Tr
+    st.markdown('<p class="subtitle">sonst werd ich sterbie</p>', unsafe_allow_html=True)
