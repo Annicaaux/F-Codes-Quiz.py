@@ -607,19 +607,19 @@ def show_prevention_rehab():
         st.markdown(f"## {topic_data['emoji']} {topic}")
 
     if topic == "Motivational Interviewing":
-    col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
-    with col1:
-        st.markdown("### 🌿 Prinzipien")
-        for prinzip in topic_data['prinzipien']:
-            st.markdown(f"🍃 {prinzip}")
+        with col1:
+            st.markdown("### 🌿 Prinzipien")
+            for prinzip in topic_data['prinzipien']:
+                st.markdown(f"🍃 {prinzip}")
 
-    with col2:
-        st.markdown("### 🛠️ Techniken")
-        for technik in topic_data['techniken']:
-            st.markdown(f"🪵 {technik}")
+        with col2:
+            st.markdown("### 🛠️ Techniken")
+            for technik in topic_data['techniken']:
+                st.markdown(f"🪵 {technik}")
     
-    st.session_state.total_points += 5
+        st.session_state.total_points += 5
 
     elif topic == "PACE-Modell":
             st.markdown("### 🌱 Bedeutung der Buchstaben:")
