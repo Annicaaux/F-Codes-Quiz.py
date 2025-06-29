@@ -613,6 +613,82 @@ def show_prevention_rehab():
                 st.markdown("### 🌿 Prinzipien")
                 for prinzip in topic_data['prinzipien']:
                     st.markdown(f"🍃 {prinzip}")
+                                with col2:
+                st.markdown("### 🛠️ Techniken")
+                for technik in topic_data['techniken']:
+                    st.markdown(f"🪵 {technik}")
+                st.session_state.total_points += 5
+
+        elif topic == "PACE-Modell":
+            st.markdown("### 🌱 Bedeutung der Buchstaben:")
+            for key, val in topic_data['bedeutung'].items():
+                st.markdown(f"**{key}** – {val}")
+            st.session_state.total_points += 5
+
+        elif topic == "Entscheidungswaage":
+            st.markdown("### ⚖️ Beschreibung:")
+            st.markdown(topic_data['beschreibung'])
+            st.markdown("### 📝 Anwendung:")
+            st.markdown(topic_data['anwendung'])
+            st.session_state.total_points += 5
+
+        elif topic == "Universelle Prävention":
+            st.markdown("### 🧍‍♂️ Zielgruppe:")
+            st.markdown(topic_data['zielgruppe'])
+            st.markdown("### 🧰 Beispiele:")
+            for bsp in topic_data['beispiele']:
+                st.markdown(f"🍃 {bsp}")
+            st.session_state.total_points += 5
+
+        elif topic == "Rehabilitation":
+            st.markdown("### 🔁 Phasen:")
+            for phase in topic_data['phasen']:
+                st.markdown(f"🌿 {phase}")
+            st.markdown("### 🎯 Ziele:")
+            for ziel in topic_data['ziele']:
+                st.markdown(f"🍃 {ziel}")
+            st.session_state.total_points += 5
+
+        st.success("🌳 Thema erkundet! +5 Punkte")
+
+def show_progress():
+    st.title("📊 Dein Lernfortschritt im Wald")
+    st.markdown("*Hier kannst du deinen Weg durch den Wald nachvollziehen*")
+
+    level, level_name = get_user_level()
+    st.markdown(f"## Dein aktuelles Level: {level_name}")
+    st.markdown(f"**Gesamtpunkte:** {st.session_state.total_points} 🍃")
+    st.markdown(f"**Beantwortete Fragen:** {st.session_state.total_questions}")
+    st.markdown(f"**Richtige Antworten:** {st.session_state.correct_answers}")
+
+    if st.session_state.total_questions > 0:
+        accuracy = (st.session_state.correct_answers / st.session_state.total_questions) * 100
+        st.markdown(f"**Treffsicherheit:** {accuracy:.1f}%")
+
+    # Visuelle Fortschrittsanzeige
+    st.markdown("### 🌿 Fortschrittsbalken")
+    st.progress(min(st.session_state.total_points / 1000, 1.0))
+
+    st.markdown("### 🍂 Gelernte Inhalte")
+    learned_modules = []
+    if st.session_state.total_points > 10:
+        learned_modules.append("📚 ICD-10 Quiz")
+    if st.session_state.total_points > 20:
+        learned_modules.append("🎭 Gedankenpalast")
+    if st.session_state.total_points > 30:
+        learned_modules.append("🧠 Kriterien-Quiz")
+    if st.session_state.total_points > 40:
+        learned_modules.append("🛡️ Präventionswissen")
+
+    if learned_modules:
+        for module in learned_modules:
+            st.markdown(f"✅ {module}")
+    else:
+        st.info("Noch keine Module abgeschlossen – auf in den Lernwald!")
+
+# Starte App
+if __name__ == "__main__":
+    main()
    
 
    
