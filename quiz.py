@@ -621,20 +621,20 @@ if topic == "Motivational Interviewing":
     
     st.session_state.total_points += 5
 
-        elif topic == "PACE-Modell":
+    elif topic == "PACE-Modell":
             st.markdown("### 🌱 Bedeutung der Buchstaben:")
             for key, val in topic_data['bedeutung'].items():
                 st.markdown(f"**{key}** – {val}")
             st.session_state.total_points += 5
 
-        elif topic == "Entscheidungswaage":
+    elif topic == "Entscheidungswaage":
             st.markdown("### ⚖️ Beschreibung:")
             st.markdown(topic_data['beschreibung'])
             st.markdown("### 📝 Anwendung:")
             st.markdown(topic_data['anwendung'])
             st.session_state.total_points += 5
 
-        elif topic == "Universelle Prävention":
+    elif topic == "Universelle Prävention":
             st.markdown("### 🧍‍♂️ Zielgruppe:")
             st.markdown(topic_data['zielgruppe'])
             st.markdown("### 🧰 Beispiele:")
@@ -642,7 +642,7 @@ if topic == "Motivational Interviewing":
                 st.markdown(f"🍃 {bsp}")
             st.session_state.total_points += 5
 
-        elif topic == "Rehabilitation":
+     elif topic == "Rehabilitation":
             st.markdown("### 🔁 Phasen:")
             for phase in topic_data['phasen']:
                 st.markdown(f"🌿 {phase}")
