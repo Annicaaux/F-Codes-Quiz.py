@@ -605,15 +605,15 @@ def show_prevention_rehab():
         topic_data = praevention_reha[topic]
         
         st.markdown(f"## {topic_data['emoji']} {topic}")
-        
-if topic == "Motivational Interviewing":
+
+    if topic == "Motivational Interviewing":
     col1, col2 = st.columns(2)
-    
+
     with col1:
         st.markdown("### 🌿 Prinzipien")
         for prinzip in topic_data['prinzipien']:
             st.markdown(f"🍃 {prinzip}")
-    
+
     with col2:
         st.markdown("### 🛠️ Techniken")
         for technik in topic_data['techniken']:
