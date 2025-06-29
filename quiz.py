@@ -606,7 +606,7 @@ def show_prevention_rehab():
         
         st.markdown(f"## {topic_data['emoji']} {topic}")
         
-      if topic == "Motivational Interviewing":
+if topic == "Motivational Interviewing":
     col1, col2 = st.columns(2)
     
     with col1:
